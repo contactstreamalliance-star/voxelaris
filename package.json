@@ -1,0 +1,20 @@
+{
+  "name": "voxelaris-desktop",
+  "version": "0.1.2",
+  "description": "Prototype desktop open source de Voxelaris pour Minecraft Java Edition",
+  "main": "src/main/main.cjs",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test tests/*.test.cjs",
+    "check": "node --check src/main/main.cjs && node --check src/main/preload.cjs && node --check src/renderer/app.js && node --check src/renderer/catalog.js && node --check src/renderer/profiles.js && node --check src/renderer/downloads.js"
+  },
+  "devDependencies": {
+    "electron": "^37.2.6"
+  },
+  "license": "AGPL-3.0-only",
+  "engines": {
+    "node": ">=20"
+  }
+}

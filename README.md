@@ -1,62 +1,70 @@
-VOXELARIS
-=========
+# Voxelaris Desktop — prototype
 
-Voxelaris est le nom de code d'une future plateforme indépendante de distribution de contenu pour **Minecraft: Java Edition**.
+Prototype d'une application de bureau indépendante de distribution de contenu pour **Minecraft: Java Edition**.
 
-Le projet vise à proposer un client et des services transparents, auditables et ouverts aux contributions. Il est à un stade précoce : aucune version stable ni aucun service officiel ne sont encore disponibles.
+> Ce dépôt est une démonstration locale. Le catalogue et les statistiques sont fictifs. L'authentification Microsoft, les téléchargements réseau et l'installation réelle dans Minecraft ne sont pas encore activés.
 
-## Statut du projet
+## Fonctions disponibles
 
-Le dépôt constitue la base publique du projet. Les fonctionnalités, interfaces, formats et choix techniques peuvent évoluer sans préavis.
+- navigation native dans une fenêtre desktop ;
+- connexion locale de démonstration clairement distincte de Microsoft OAuth ;
+- catalogue fictif de mods, modpacks, resource packs et shaders ;
+- recherche, filtres et affichage détaillé ;
+- création et gestion locale de profils Minecraft ;
+- file de téléchargements simulée ;
+- calcul réel d'une empreinte SHA-256 sur le fichier de démonstration ;
+- simulation contrôlée de l'installation dans un profil ;
+- fonctionnement hors ligne ;
+- aucune collecte de données.
 
-## Principes
+## Lancer le prototype
 
-- code public auditable ;
-- contributions examinées et testées ;
-- sécurité et respect de la vie privée dès la conception ;
-- publication responsable des vulnérabilités ;
-- séparation claire entre code libre, marque, données et infrastructure officielle.
+Installez [Node.js](https://nodejs.org/) 20 ou supérieur, puis exécutez :
 
-## Organisation du dépôt
+Sous Windows, vous pouvez simplement double-cliquer sur `INSTALLER_ET_LANCER.bat`. Lors du premier lancement, le script installe Electron puis ouvre l'application.
 
-```text
-Voxelaris/
-├── LICENSE.txt
-├── README.txt
-├── CONTRIBUTING.txt
-├── SECURITY.txt
-├── TRADEMARKS.txt
-├── GOVERNANCE.txt
-├── docs/
-│   └── README.txt
-└── src/
-    └── README.txt
+La méthode manuelle équivalente est :
+
+```bash
+npm install
+npm start
 ```
 
-## Installation et développement
+Ne déposez pas le dossier `node_modules` sur GitHub : il est généré automatiquement par `npm install` et déjà exclu par `.gitignore`.
 
-Les instructions de compilation, d'exécution et de test seront ajoutées avec le premier prototype. Aucune chaîne de compilation n'est définie à ce stade.
+## Vérifier le code
 
-## Contribuer
+```bash
+npm run check
+npm test
+```
 
-Les contributions se font par pull request et sont soumises à revue, tests et vérifications de sécurité. Consultez CONTRIBUTING.txt avant toute proposition.
+## Architecture
 
-Ne publiez jamais de secret, clé, certificat privé, donnée personnelle, configuration sensible ni détail opérationnel susceptible de compromettre un système. Signalez les vulnérabilités selon SECURITY.txt.
+```text
+src/
+├── main/                 Processus Electron et passerelle sécurisée
+│   ├── main.cjs
+│   └── preload.cjs
+├── renderer/             Interface et logique utilisateur
+│   ├── app.js
+│   ├── catalog.js
+│   ├── profiles.js
+│   └── downloads.js
+├── styles/               Feuilles de style
+│   ├── base.css
+│   ├── layout.css
+│   └── components.css
+├── data/catalog.json     Données fictives de démonstration
+└── index.html
+```
 
-## Licence
+Une présentation détaillée se trouve dans [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
-Sauf indication contraire dans un fichier ou sous-répertoire, le client Voxelaris et les services principaux présents dans ce dépôt sont distribués sous GNU Affero General Public License, version 3 uniquement (AGPL-3.0-only). Voir LICENSE.txt.
+## Sécurité du prototype
 
-Certaines bibliothèques ou certains SDK indépendants pourront être publiés ultérieurement sous Apache-2.0. Leur licence sera alors indiquée explicitement dans leur propre répertoire ; leur simple présence ne modifiera pas la licence du reste du dépôt.
+La fenêtre utilise l'isolation de contexte, désactive l'intégration directe de Node.js dans l'interface et n'expose qu'une API minimale validée par le processus principal. Aucune donnée utilisateur réelle, clé, jeton ou configuration de production n'est incluse.
 
-La licence du code ne concède aucun droit sur la marque Voxelaris, ses logos, les données utilisateurs, les comptes, les domaines ou l'infrastructure officielle. Voir TRADEMARKS.txt.
+## Licence et indépendance
 
-## Indépendance
-
-Voxelaris est un projet indépendant. Il n'est ni affilié à, ni approuvé, ni sponsorisé par Mojang Studios ou Microsoft. Minecraft est une marque de Microsoft ; toute référence sert uniquement à décrire la compatibilité prévue du projet.
-
-## Gouvernance et sécurité
-
-- Gouvernance : GOVERNANCE.txt
-- Politique de sécurité : SECURITY.txt
-- Politique de marque : TRADEMARKS.txt
+Le code est distribué sous GNU AGPL-3.0-only. Voxelaris est indépendant et n'est ni affilié à, ni approuvé, ni sponsorisé par Mojang Studios ou Microsoft. Minecraft est une marque de Microsoft.

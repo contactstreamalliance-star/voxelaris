@@ -1,0 +1,62 @@
+[
+  {
+    "id": "aurora-performance",
+    "name": "Aurora Performance",
+    "type": "Modpack",
+    "summary": "Une sélection légère qui améliore la fluidité sans transformer l'expérience vanilla.",
+    "description": "Aurora Performance regroupe des optimisations fictives pensées pour les ordinateurs modestes. Cette fiche sert uniquement à démontrer le futur parcours d'installation de Voxelaris.",
+    "minecraft": "1.21.1",
+    "loader": "Fabric",
+    "author": "Studio Northstar",
+    "downloads": 18420,
+    "rating": 4.8,
+    "size": "48,2 Mo",
+    "accent": "violet",
+    "tags": ["Performance", "Vanilla+", "Multijoueur"]
+  },
+  {
+    "id": "verdant-worlds",
+    "name": "Verdant Worlds",
+    "type": "Mod",
+    "summary": "De nouveaux biomes luxuriants et des variations naturelles cohérentes.",
+    "description": "Une démonstration de mod d'exploration, avec des métadonnées de compatibilité et de dépendances telles qu'elles pourraient apparaître dans le catalogue final.",
+    "minecraft": "1.20.6",
+    "loader": "NeoForge",
+    "author": "Mossbyte",
+    "downloads": 9210,
+    "rating": 4.6,
+    "size": "12,7 Mo",
+    "accent": "green",
+    "tags": ["Exploration", "Biomes", "Aventure"]
+  },
+  {
+    "id": "lumen-shaders",
+    "name": "Lumen Skies",
+    "type": "Shader",
+    "summary": "Une ambiance lumineuse cinématique avec plusieurs profils de performance.",
+    "description": "Un shader fictif permettant de tester les filtres, les fiches détaillées et l'association à un profil Minecraft compatible.",
+    "minecraft": "1.21.1",
+    "loader": "Iris",
+    "author": "Helio Works",
+    "downloads": 31650,
+    "rating": 4.9,
+    "size": "6,4 Mo",
+    "accent": "amber",
+    "tags": ["Graphismes", "Cinématique", "Configurable"]
+  },
+  {
+    "id": "pixel-heritage",
+    "name": "Pixel Heritage",
+    "type": "Resource pack",
+    "summary": "Des textures 16×16 familières, retravaillées avec une palette plus chaleureuse.",
+    "description": "Un pack de ressources fictif qui conserve une esthétique proche du jeu de base et démontre la gestion de plusieurs types de contenus.",
+    "minecraft": "1.21.1",
+    "loader": "Vanilla",
+    "author": "Block & Brush",
+    "downloads": 12780,
+    "rating": 4.5,
+    "size": "18,9 Mo",
+    "accent": "blue",
+    "tags": ["16×16", "Vanilla", "Textures"]
+  }
+]

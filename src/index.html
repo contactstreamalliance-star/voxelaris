@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none';" />
+    <title>Voxelaris — Prototype</title>
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/layout.css" />
+    <link rel="stylesheet" href="./styles/components.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand"><div class="brand-mark">V</div><div><strong>Voxelaris</strong><span>Prototype desktop</span></div></div>
+        <nav aria-label="Navigation principale">
+          <button class="nav-item is-active" data-view="discover"><span>⌁</span>Découvrir</button>
+          <button class="nav-item" data-view="library"><span>▦</span>Ma bibliothèque</button>
+          <button class="nav-item" data-view="profiles"><span>◇</span>Profils Minecraft</button>
+          <button class="nav-item" data-view="downloads"><span>↓</span>Téléchargements <em id="download-count">0</em></button>
+        </nav>
+        <div class="sidebar-foot">
+          <div class="status-dot"><i></i><span>Mode démonstration<br><small>Aucun service connecté</small></span></div>
+          <button class="account-card" data-view="about"><span class="avatar">?</span><span><strong>Mode hors ligne</strong><small>Compte Microsoft à venir</small></span></button>
+        </div>
+      </aside>
+      <main class="main-content">
+        <header class="topbar">
+          <div><p class="eyebrow">PLATEFORME INDÉPENDANTE</p><h1 id="view-title">Découvrez votre prochain monde</h1></div>
+          <div class="topbar-actions"><button class="icon-button" id="theme-button" aria-label="Changer le thème">◐</button><button class="primary-button" id="connect-button">Connexion Microsoft</button></div>
+        </header>
+        <section id="view" aria-live="polite"></section>
+      </main>
+    </div>
+    <div id="modal-root"></div>
+    <div id="toast-root" aria-live="assertive"></div>
+    <script type="module" src="./renderer/app.js"></script>
+  </body>
+</html>
